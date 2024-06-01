@@ -1,5 +1,5 @@
 // Tableau d'images
-const images = ['./images/auto2.jpg', './images/es.jpg' , './images/auto3.jpg', './images/auto4.jpg', './images/auto5.jpg'];
+const images = ['./images/auto2.jpg', './images/es.jpg' , './images/auto3.jpg', './images/auto4.jpg', './images/auto5.jpg','./images/auto6.jpg'];
 
 // Fonction pour changer l'image d'arrière-plan
 function changerImage() {
