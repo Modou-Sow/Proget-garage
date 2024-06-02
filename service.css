@@ -73,10 +73,14 @@ body{
     z-index: 11111;
 }
 .item .name{
-    font-size: 40px;
+    font-size: 65px;
     font-weight: bold;
     opacity: 0;
     animation:showcontent 1s ease-in-out 1 forwards
+}
+.des li, p{
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .item .des{
     margin:20px 0;
