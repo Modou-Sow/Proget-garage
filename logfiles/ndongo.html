@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="ndongo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container" id="container"> 
+        <div class="form-container sign-up-container">
+            <a href="registrer.html"> 
+                <button>Créer un compte</button>
+            </a>*
+        </div>
+        <div class="form-container login-container"> 
+            <form action="http://localhost/Proget-garage/logfiles/login.php" method="post">
+                <h1>Se connecter</h1>
+                <div class="social-container">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Se connecter</button>
+            </form>
+        </div>
+
+        <yield; exitiv class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <button class="ghost" id="login">Se connecter</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <a href="registrer.html">
+                        <button class="ghost" id="signUp">Créer un compte</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="ndongo.js" charset="utf-8"></script>
+</body>
+
+</html>
