@@ -96,16 +96,16 @@ body {
     border-style: solid;
     display: grid;
     opacity: 30px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 }
 .square img{
     position: relative;
     bottom: -10%;
     left: 17%;
     border-radius: 13px;
+    box-shadow: 0 7px 25px rgba(11, 7, 7, 0.08);
 }
-.square img:hover{
-    overflow: scroll;
-}
+
 .square a{
     position: relative;
     bottom: -10%;

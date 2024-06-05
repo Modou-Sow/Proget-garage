@@ -10,13 +10,13 @@
 
 <body>
     <div class="container" id="container"> 
-        <div class="form-container sign-up-container">
+        <!-- <div class="form-container sign-up-container">
             <a href="registrer.html"> 
                 <button>Créer un compte</button>
             </a>*
-        </div>
+        </div> -->
         <div class="form-container login-container"> 
-            <form action="http://localhost/Proget-garage/logfiles/login.php" method="post">
+            <form action="login.php" method="post">
                 <h1>Se connecter</h1>
                 <div class="social-container">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -25,9 +25,12 @@
                 </div>
                 <label for="username">Nom d'utilisateur :</label>
                 <input type="text" id="username" name="username" required>
+
                 <label for="password">Mot de passe :</label>
                 <input type="password" id="password" name="password" required>
-                <button type="submit">Se connecter</button>
+                
+
+                <button type="submit" name="add_author">Se connecter</a></button>
             </form>
         </div>
 
