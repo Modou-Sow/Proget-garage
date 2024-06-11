@@ -12,14 +12,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-    /* background-color: red; */
+    padding: 5px;
+    /* background-color: black; */
     margin: 10px;
 }
 .circle {
     width: 150px;
     height: 150px;
-    background-color: black;
+    background-color: white;
     align-items: center;
     border-radius: 50%;
     margin: 20px;
@@ -32,7 +32,8 @@ body {
     align-items: center;
     overflow: hidden;
     height: 150px;
-    /* background-color: yellow; */
+    background-color: lightgrey;
+    border-radius: 30px;
 }
 
 .nav-header{
@@ -61,14 +62,14 @@ body {
     align-items: center;
     font-size: 25px;
 }
-.deconnecte
-{
+.texte a{
     text-decoration: none;
     color: black;
 }
-.deconnecte:hover
+.texte a:hover
 {
     text-decoration: underline;
+    background-color: gray;
     cursor: pointer;
 }
 .rectangle {
@@ -111,11 +112,46 @@ body {
     bottom: -10%;
     left: 17%;
     text-decoration: none;
-    color: black;
+    color: gray;
 }
-.square :hover{
+.square a:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+#hero {
+    background-image: url('hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    /* padding: 200px 0; */
+    color: white;
+}
+
+#hero h1 {
+    font-size: 48px;
+    /* margin-bottom: 20px; */
+    color: black;
+}
+
+#hero p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: black;
+
+}
+
+#schedule {
+    padding: 20px;
+}
+
+#schedule table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#schedule th, #schedule td {
+    border: 1px solid #ccc;
+    padding: 8px;
 }
 
 footer{
@@ -142,4 +178,5 @@ img{
 }
 .milieu a:hover{
     text-decoration: underline;
+    background-color: gray;
 }

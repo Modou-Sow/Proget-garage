@@ -1,0 +1,66 @@
+body{
+    background-image: url(./images/color2.avif);
+}
+
+/* Center the form container */
+.form-container {
+    margin: 0 auto;
+    width: 50%;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .form-container h1 {
+    position: relative;
+    right: -10%;
+  }
+  .form-container h1:hover {
+    background-color: green;
+  }
+  
+  /* Style the submit button */
+  button[type="submit"] {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Arrange content vertically */
+}
+.button a{
+    text-decoration: none;
+    color: white;
+}
+.iframe-container {
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    border: 1px solid #ccc; /* Optional border */
+    padding: 20px; /* Padding around the iframe */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+  }
+
+  /* Center text labels
+.style label {
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  
+   Center input fields 
+  .style input[type="text"],
+  .style input[type="number"] {
+    display: block;
+    margin: 0 auto;
+    width: 80%; /* Adjust width as needed 
+    padding: 5px;
+    border: 1px solid #ccc;
+  } */
+  
