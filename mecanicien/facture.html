@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de Facture</title>
+    <link rel="stylesheet" href="facture.css">
+</head>
+<body>
+    <h1 class="h1">Création de Facture</h1>
+
+    <form action="http://localhost/Proget-garage1/mecanicien/facture.php" method="post">
+        <div class="form-group">
+            <label for="panne">Panne:</label>
+            <input type="text" id="panne" name="panne" required>
+        </div>
+
+        <div class="form-group">
+            <label for="date_facture">Date de Facture:</label>
+            <input type="date" id="date_facture" name="date_facture" required>
+        </div>
+
+        <div class="form-group">
+            <label for="immatriculation">Immatriculation:</label>
+            <input type="text" name="immatriculation">
+        </div>
+
+        <div class="form-group">
+            <label for="nom_chauffeur">Nom Chauufeur:</label>
+            <input type="text" step="0.01" id="nom_chauffeur" name="nom_chauffeur" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lignes_facture">Lignes de Facture:</label>
+            <table id="lignes_facture">
+                <thead>
+                    <tr>
+                        <th>Produit</th>
+                        <th>Quantité</th>
+                        <th>Prix Unitaire</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="produit[]"></td>
+                        <td><input type="number" step="1" name="quantite[]"></td>
+                        <td><input type="number" step="0.01" name="prix_unitaire[]"></td>
+                        <td><input type="number" step="0.01" name="total_ligne" ></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <button id="add-ligne">Ajouter une Ligne</button> -->
+        </div>
+
+        <button type="submit">Créer Facture</button>
+        <button type="submit"><a href="./meca-dashboard.html">Accueil</a></button>
+
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -72,6 +72,22 @@ body {
     background-color: gray;
     cursor: pointer;
 }
+
+#search-bar {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1; /* Allow search bar to grow to fill available space */
+}
+
+.search-button {
+    padding: 5px 10px;
+    background-color: #4CAF50; /* Green color for search button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 .rectangle {
     width: 100%;
     height: 2px;

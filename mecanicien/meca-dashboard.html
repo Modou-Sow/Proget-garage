@@ -26,7 +26,12 @@
     <section id="hero">
         <!-- <img src="../images/mecanicien.webp" alt="Image descriptive" width="100%" height="10%"> -->
         <h1>TAKKU LIGEY</h1>
-        <p>Pour plus de proffessionnalisme</p>
+
+        <form action="http://localhost/Proget-garage1/mecanicien/search.php" method="post">
+            <input type="search" placeholder="Rechercher" id="search-bar" name="search-bar" >
+            <button type="submit" class="search-button" >Rechercher</button>
+        </form>
+        <!-- <p>Pour plus de proffessionnalisme</p> -->
     </section>
 
     <div class="container">
@@ -34,19 +39,19 @@
         <div class="squares">
             <div class="square">
                 <img src="../images/note.jpeg" alt="" width="150px" height="150px" class="img">
-                 <a href="#">Informations Chauffeur</a>
+                 <a href="./facture.html">Ecrire une facture</a>
             </div>
             <div class="square">
                 <img src="../images/voi.jpeg" alt="" width="150px" height="150px">
-                <a href="#">Informations Voiture</a>
+                <a href="./vehicule_chauffeur.html"> Vehicule & Chauffeur </a>
             </div>
             <div class="square">
                 <img src="../images/historique.jpeg" alt="" width="150px" height="150px">
-                <a href="#">Historique Reparation</a>
+                <a href="http://localhost/Proget-garage1/mecanicien/historique.php">Historique Reparation</a>
             </div>
             <div class="square">
                 <img src="../images/stock.jpeg" alt="" width="150px" height="150px">
-                <a href="#">Gestion des pieces</a>
+                <a href="http://localhost/Proget-garage1/mecanicien/stock.php">Gestion des pieces</a>
             </div>
         </div>
         <div class="rectangle"></div>
