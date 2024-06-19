@@ -1,118 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flott</title>
+    <title>Tableau de bord du garage</title>
     <link rel="stylesheet" href="comptable-dashboard.css">
 </head>
 <body>
-
-    <header class="header">
-        <div class="nav-header">
-            <a href="">COMPTABLE</a>
-        </div>
-        <div class="gauche">
-            <div class="texte">
-                <p>XXX XXX</p>
-                <p>XX XXX XX XX</p>
-                <p>XXX@gmail.com</p>
-                <a href="./ndongo.html">Deconnection</a>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Encaissements</a></li>
+                <li><a href="#">Décaissements</a></li>
+                <li><a href="#">Rapports</a></li>
+                <li><a href="#">Paramètres</a></li>
+            </ul>
+        </nav>
+        <div class="comptable-info">
+            <div class="comptable-photo"></div>
+            <div class="comptable-details">
+                <h3>Jean Dupont</h3>
+                <p>Comptable agréé</p>
             </div>
-            <div class="circle"></div>
-        </div>     
+        </div>
     </header>
 
-    <section id="hero">
-        <!-- <img src="../images/mecanicien.webp" alt="Image descriptive" width="100%" height="10%"> -->
-        <h1>TAKKU LIGEY</h1>
-        <p>Pour plus de proffessionnalisme</p>
-    </section>
+    <main>
+        <div class="dashboard-container">
+            <div class="dashboard-box" id="encaissements-box">
+                <h2>Encaissements</h2>
+                <p>Consultez les factures en attente d'encaissement.</p>
+                <button class="view-btn">Voir les factures</button>
+            </div>
 
-    <div class="container">
-        <div class="rectangle"></div>
-        <div class="squares">
-            <div class="square">
-                <img src="../images/note.jpeg" alt="" width="150px" height="150px" class="img">
-                 <a href="#">Informations Chauffeur</a>
-            </div>
-            <div class="square">
-                <img src="../images/voi.jpeg" alt="" width="150px" height="150px">
-                <a href="#">Informations Voiture</a>
-            </div>
-            <div class="square">
-                <img src="../images/historique.jpeg" alt="" width="150px" height="150px">
-                <a href="#">Historique Reparation</a>
-            </div>
-            <div class="square">
-                <img src="../images/stock.jpeg" alt="" width="150px" height="150px">
-                <a href="#">Gestion des pieces</a>
+            <div class="dashboard-box" id="decaissements-box">
+                <h2>Décaissements</h2>
+                <p>Gérez les décaissements du garage.</p>
+                <button class="view-btn">Voir les décaissements</button>
             </div>
         </div>
-        <div class="rectangle"></div>
-    </div>
 
-    <section id="schedule">
-        <h2>Horaires</h2>
-        <table>
-            <tr>
-                <th>Jour</th>
-                <th>Heures d'ouverture</th>
-            </tr>
-            <tr>
-                <td>Lundi</td>
-                <td>9h00 - 18h00</td>
-            </tr>
-            <tr>
-                <td>Mardi</td>
-                <td>9h00 - 18h00</td>
-            </tr>
-            <tr>
-                <td>Mercredi</td>
-                <td>9h00 - 18h00</td>
-            </tr>
-            <tr>
-                <td>Jeudi</td>
-                <td>9h00 - 18h00</td>
-            </tr>
-            <tr>
-                <td>Vendredi</td>
-                <td>9h00 - 18h00</td>
-            </tr>
-            <tr>
-                <td>Samedi</td>
-                <td>Fermé</td>
-            </tr>
-            <tr>
-                <td>Dimanche</td>
-                <td>Fermé</td>
-            </tr>
-        </table>
-    </section>
+        <div class="facture-container" id="facture-container" style="display: none;">
+            <h2>Factures en attente d'encaissement</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Montant</th>
+                        <th>Client</th>
+                        <th>Détails</th>
+                        <th>État</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-06-15</td>
+                        <td>1500 €</td>
+                        <td>Garage Dupont</td>
+                        <td>Réparation moteur</td>
+                        <td>En attente</td>
+                        <td>
+                            <button class="encaisser-btn">Encaisser</button>
+                            <button class="annuler-btn">Annuler</button>
+                        </td>
+                    </tr>
+                    <!-- Ajoutez d'autres lignes au besoin -->
+                </tbody>
+            </table>
+        </div>
+    </main>
 
     <footer>
-        <div class="large-rectangle">
-            <div class="nos-reseau">
-                <div>
-                    <img src="../images/instagram.jpeg" alt="" width="40px" height="40px"><figcaption>Instagram</figcaption>
-                </div>
-                <div>
-                    <img src="../images/xxxxxx.jpeg" alt="" width="40px" height="40px"><figcaption>Tweeter</figcaption>
-                </div>
-                <div>
-                    <img src="../images/whatsapp.jpeg" alt="" width="40px" height="40px"><figcaption>whatsapp</figcaption>
-                </div>
-                <!-- <img src="./images/xxxxxx.jpeg" alt="" width="40px" height="40px"><figcaption>Instagram</figcaption>
-                <img src="./images/whatsapp.jpeg" alt="" width="40px" height="40px"><figcaption>Instagram</figcaption> -->
-            </div>
-            <div class="milieu">
-                <a href="index.html">www.Garage.com</a>
-            </div>
-            <div>
-                <p>&copy; All right Reversed . TGI~II</p>
-            </div>
-        </div>
+        <p>&copy; 2023 Garage ABC. Tous droits réservés.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
