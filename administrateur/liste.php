@@ -13,23 +13,23 @@
     $pdo = new PDO ("mysql:host=localhost;dbname=ndongofall", "root" ,"");
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT * FROM historique ";
+    $sql = "SELECT * FROM vhch ";
     $stmt = $pdo ->query($sql);
     $stmt ->execute();
-    print "<h3><b> Historique de Depannage</b>:".$stmt-> rowCount()."</h3>";
+    print "<h3><b> Liste Voiture avec Chauffeur</b>:".$stmt-> rowCount()."</h3>";
 
     ?>
     <table>
     <tr>
-        <th>Id</th>
-        <th>Date</th>
+    <th>Id</th>
+
         <th>Nom</th>
+        <th>Prenom</th>
+        <th>Adresse</th>
+        <th>Telephone</th>
+        <th>Email</th>
         <th>Immatriculation</th>
-        <th>Panne</th>
-        <th>Produit</th>
-        <th>Montant</th>
-
-
+        <th>Marque</th>
 
         <!-- Ajoutez d'autres en-têtes de colonnes ici si nécessaire -->
     </tr>
@@ -37,21 +37,19 @@
     while ($row = $stmt -> fetch( PDO::FETCH_ASSOC)){
         echo "<tr>";
         echo "<td>" . $row['id'] . "</td>";
-        echo "<td>" . $row['date_facture'] . "</td>";
-        echo "<td>" . $row['nom_chauffeur'] . "</td>";
+        echo "<td>" . $row['nom'] . "</td>";
+        echo "<td>" . $row['prenom'] . "</td>";
+        echo "<td>" . $row['adresse'] . "</td>";
+        echo "<td>" . $row['telephone'] . "</td>";
+        echo "<td>" . $row['email'] . "</td>";
         echo "<td>" . $row['immatriculation'] . "</td>";
-        echo "<td>" . $row['panne'] . "</td>";
-        echo "<td>" . $row['produit'] . "</td>";
-        echo "<td>" . $row['total_ligne'] . "</td>";
+        echo "<td>" . $row['marque_voiture'] . "</td>";
 
         // Ajoutez d'autres cellules de données ici si nécessaire
         echo "</tr>";
     }
     ?>
 </table>
-
-<button class="button"><a href="./meca-dashboard.html">Acceuil</a></button>
-
 <style>
     table {
         border-collapse: collapse;
@@ -79,22 +77,6 @@
 
     tr:nth-child(even) {
         background-color: #f2f2f2;
-    }
-    .button {
-        margin-top: 30px;
-        padding: 5px 20px 5px 20px;
-        position: relative;
-        left: 45%;
-        background-color: gray;
-    }
-    .button a {
-        color: white;
-        text-decoration: none;
-
-    }
-    .button:hover {
-        background-color: green;
-
     }
 </style>
     
