@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4; 
 }
 
 /* En-tête */
@@ -29,6 +30,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold; 
 }
 
 .comptable-info {
@@ -39,13 +41,13 @@ nav ul li a {
 .comptable-photo {
     width: 50px;
     height: 50px;
-    background-color: #ccc;
     border-radius: 50%;
     margin-right: 10px;
 }
 
 .comptable-details h3 {
     margin: 0;
+    font-size: 1.2em; 
 }
 
 .comptable-details p {
@@ -55,6 +57,9 @@ nav ul li a {
 /* Contenu principal */
 main {
     padding: 20px;
+    display: flex;
+    flex-direction: column; /* Aligner les éléments en colonne */
+    min-height: calc(100vh - 100px); /* Hauteur minimale pour le main */
 }
 
 .dashboard-container {
@@ -64,18 +69,20 @@ main {
 }
 
 .dashboard-box {
-    background-color: #f1f1f1;
+    background-color: #fff; 
     padding: 20px;
     border-radius: 5px;
-    flex-basis: 30%;
+    flex-basis: 45%; /* Augmenter la largeur des boîtes */
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .dashboard-box h2 {
     margin-top: 0;
+    color: #333; 
 }
 
 .dashboard-box img {
@@ -85,18 +92,25 @@ main {
 }
 
 .view-btn {
-    background-color: #333;
+    background-color: #007bff; 
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.view-btn:hover {
+    background-color: #0056b3; 
 }
 
 .facture-container {
-    background-color: #f1f1f1;
+    background-color: #fff; 
     padding: 20px;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    flex-grow: 1; /* Permettre à la section de prendre tout l'espace restant */
 }
 
 table {
@@ -111,12 +125,22 @@ th, td {
 }
 
 .encaisser-btn, .annuler-btn {
-    background-color: #333;
+    background-color: #28a745; 
     color: #fff;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
+    margin-right: 5px; 
+    transition: background-color 0.3s ease; 
+}
+
+.encaisser-btn:hover {
+    background-color: #218838; 
+}
+
+.annuler-btn:hover {
+    background-color: #dc3545; 
 }
 
 /* Pied de page */
@@ -125,5 +149,5 @@ footer {
     color: #fff;
     padding: 10px;
     text-align: center;
-    margin-top: auto;
+    margin-top: auto; /* Positionner le pied de page en bas */
 }

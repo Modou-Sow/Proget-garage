@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tableau de bord du garage</title>
+    <title>tableau bord comptable</title>
     <link rel="stylesheet" href="comptable-dashboard.css">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="#">Encaissements</a></li>
-                <li><a href="#">Décaissements</a></li>
-                <li><a href="#">Rapports</a></li>
-                <li><a href="#">Paramètres</a></li>
-            </ul>
+            <h1>FLOTT</h1>
+           
         </nav>
         <div class="comptable-info">
-            <div class="comptable-photo"></div>
+            <img class="comptable-photo" src="faalyaaram.jpg" alt="Photo du comptable">
             <div class="comptable-details">
-                <h3>Jean Dupont</h3>
+                <h3>soxnarama</h3>
                 <p>Comptable agréé</p>
             </div>
         </div>
     </header>
-
     <main>
         <div class="dashboard-container">
             <div class="dashboard-box" id="encaissements-box">
                 <h2>Encaissements</h2>
                 <p>Consultez les factures en attente d'encaissement.</p>
-                <button class="view-btn">Voir les factures</button>
+                <button class="view-btn" id="encaissements-btn">Voir les factures</button>
             </div>
 
             <div class="dashboard-box" id="decaissements-box">
                 <h2>Décaissements</h2>
                 <p>Gérez les décaissements du garage.</p>
-                <button class="view-btn">Voir les décaissements</button>
+                <button class="view-btn" id="decaissements-btn">Voir les décaissements</button>
             </div>
         </div>
 
@@ -54,23 +49,30 @@
                 <tbody>
                     <tr>
                         <td>2023-06-15</td>
-                        <td>1500 €</td>
-                        <td>Garage Dupont</td>
+                        <td>1500 F</td>
+                        <td>modou</td>
                         <td>Réparation moteur</td>
                         <td>En attente</td>
                         <td>
-                            <button class="encaisser-btn">Encaisser</button>
-                            <button class="annuler-btn">Annuler</button>
+                            <button class="encaisser-btn" id="encaisser-btn">Encaisser</button>
+                            <button class="annuler-btn" id="annuler-btn">Annuler</button>
                         </td>
                     </tr>
                     <!-- Ajoutez d'autres lignes au besoin -->
                 </tbody>
             </table>
         </div>
+
+        <div class="facture-container" id="decaissements-container" style="display: none;">
+            <h2>Décaissements</h2>
+            <!-- Ajoutez le contenu pour les décaissements ici -->
+            <p>Contenu des décaissements...</p>
+        </div>
+
     </main>
 
     <footer>
-        <p>&copy; 2023 Garage ABC. Tous droits réservés.</p>
+        <p>&copy; Ndongo Fall. Tous droits réservés.</p>
     </footer>
 
     <script src="script.js"></script>
