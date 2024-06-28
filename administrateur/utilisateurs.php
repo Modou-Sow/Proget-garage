@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="forms.css">
-    <link rel="stylesheet" href="bd.css"> -->
+    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="bd.css">
     <title>Document</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
     $pdo = new PDO ("mysql:host=localhost;dbname=ndongofall", "root" ,"");
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT * FROM stock ";
+    $sql = "SELECT * FROM utilisateurs ";
     $stmt = $pdo ->query($sql);
     $stmt ->execute();
     print "<h3><b>Liste des pieces disponible</b>:".$stmt-> rowCount()."</h3>"; 
@@ -22,11 +22,8 @@
 
     <tr>
         <th>Id</th>
-        <th>Produit</th>
-        <th>Quantite</th>
-        <th>Prix</th>
-        <th>Modele</th>
-
+        <th>Username</th>
+        <th>Password</th>
 
         <!-- Ajoutez d'autres en-têtes de colonnes ici si nécessaire -->
     </tr>
@@ -34,11 +31,8 @@
     while ($row = $stmt -> fetch( PDO::FETCH_ASSOC)) {
         echo "<tr>";
         echo "<td>" . $row['id'] . "</td>";
-        echo "<td>" . $row['produit'] . "</td>";
-        echo "<td>" . $row['quantite'] . "</td>";
-        echo "<td>" . $row['prix'] . "</td>";
-        echo "<td>" . $row['modele'] . "</td>";
-
+        echo "<td>" . $row['username'] . "</td>";
+        echo "<td>" . $row['password'] . "</td>";
 
         // Ajoutez d'autres cellules de données ici si nécessaire
         echo "</tr>";
@@ -46,21 +40,22 @@
     ?>
 </table>
 
-<button class="button"><a href="./meca-dashboard.html">Acceuil</a></button>
+<button class="button"><a href="./index.html">Acceuil</a></button>
 
 <style>
     table {
         border-collapse: collapse;
         width: 100%;
     }
-
+    
     th, td {
         border: 1px solid #ddd;
         padding: 8px;
         text-align: left;
     }
-
+   
     th {
+        padding: 10px;
         background-color: gray;
         color: white;
     }
