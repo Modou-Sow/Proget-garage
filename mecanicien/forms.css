@@ -1,0 +1,46 @@
+/* body {
+  margin-top: 10px;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+dl {
+  /* width: 100%; */
+  /* margin: ; 
+  padding: 0;
+  overflow: auto;
+}
+dt {
+  /* width: 100%; */
+  /* float: left;
+  margin: 0;
+  padding: 5px  5px 0;
+  border-bottom: 1px solid rgb(185, 183, 183);
+  font-weight: bold;
+  overflow: auto;
+
+}
+dd {
+  /* width: 100%; 
+  float: left;
+  margin: 0;
+  padding: 5px 0 5px 0;
+  border-bottom: 1px solid gray;
+  overflow: auto;
+} */
+dl {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+dl dt {
+  width: 150px;
+  text-align: right;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+dl dd {
+  flex: 1;
+}

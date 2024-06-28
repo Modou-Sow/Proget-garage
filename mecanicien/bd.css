@@ -1,0 +1,20 @@
+/* Style the definition list (dl) */
+dl {
+  display: flex; /* Make items in dl display horizontally */
+  margin: 0 auto; /* Center dl horizontally */
+  padding: 0;
+  list-style: none; /* Remove default list style */
+}
+
+/* Style definition terms (dt) */
+dl dt {
+  width: 150px; /* Set width for labels */
+  text-align: right; /* Align labels to the right */
+  padding-right: 10px; /* Add padding between label and value */
+  font-weight: bold; /* Make labels bold */
+}
+
+/* Style definition descriptions (dd) */
+dl dd {
+  flex: 1; /* Allow values to fill remaining space */
+}

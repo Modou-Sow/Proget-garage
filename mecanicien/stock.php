@@ -15,27 +15,84 @@
     $sql = "SELECT * FROM stock ";
     $stmt = $pdo ->query($sql);
     $stmt ->execute();
-    print "<h3><b>Number of students found</b>:".$stmt-> rowCount()."</h3>";
+    print "<h3><b>Liste des pieces disponible</b>:".$stmt-> rowCount()."</h3>"; 
+    
+    ?>
+    <table>
 
-while ($row = $stmt -> fetch( PDO::FETCH_ASSOC)){
-    print "<dl>";
+    <tr>
+        <th>Id</th>
+        <th>Produit</th>
+        <th>Quantite</th>
+        <th>Prix</th>
+        <th>Modele</th>
 
-        print "<dt>Id</dt>"; 
-        print "<dd>".$row['produit']."</dd>";
 
-        print "<dt>ISBN number </dt>"; 
-        print "<dd>".$row['prix']."</dd>";
-        
-        // print "<dt>Titre</dt>"; 
-        // print "<dd>".$row['title']."</dd>";
-        
-        // print "<dt>Annee de publication</dt>"; 
-        // print "<dd>".$row['pubyear']."</dd>";
+        <!-- Ajoutez d'autres en-têtes de colonnes ici si nécessaire -->
+    </tr>
+    <?php
+    while ($row = $stmt -> fetch( PDO::FETCH_ASSOC)) {
+        echo "<tr>";
+        echo "<td>" . $row['id'] . "</td>";
+        echo "<td>" . $row['produit'] . "</td>";
+        echo "<td>" . $row['quantite'] . "</td>";
+        echo "<td>" . $row['prix'] . "</td>";
+        echo "<td>" . $row['modele'] . "</td>";
 
-        // print "<dt>Edition</dt>"; 
-        // print "<dd>".$row['edition']."</dd>";
 
-}
+        // Ajoutez d'autres cellules de données ici si nécessaire
+        echo "</tr>";
+    }
+    ?>
+</table>
+
+<button class="button"><a href="./meca-dashboard.html">Acceuil</a></button>
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: gray;
+        color: white;
+    }
+    h3{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: underline;
+        padding: 30px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    .button {
+        margin-top: 30px;
+        padding: 5px 20px 5px 20px;
+        position: relative;
+        left: 45%;
+        background-color: gray;
+    }
+    .button a {
+        color: white;
+        text-decoration: none;
+
+    }
+    .button:hover {
+        background-color: green;
+
+    }
+</style>
+<?php
 
 ?>
 </body>
