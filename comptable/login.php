@@ -48,6 +48,19 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         exit();
     } else {
         // Afficher un message d'erreur
-        echo 'erreur';
-    }
+        echo '<div class="error-message" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Identifiants incorrects.</div>';    }
+    
 }
+?>
+<style>
+    .error-message {
+  color: red;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+}
+
+</style>

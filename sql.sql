@@ -64,16 +64,14 @@ mysql> desc historique;
 +-----------------+-------------+------+-----+---------+----------------+
 7 rows in set (0.00 sec)
 
-mysql> desc locations;
-+----------+-------------+------+-----+---------+-------+
-| Field    | Type        | Null | Key | Default | Extra |
-+----------+-------------+------+-----+---------+-------+
-| username | varchar(20) | YES  |     | NULL    |       |
-| addresse | varchar(20) | YES  |     | NULL    |       |
-| numero   | varchar(20) | YES  |     | NULL    |       |
-| prix     | varchar(20) | YES  |     | NULL    |       |
-+----------+-------------+------+-----+---------+-------+
-4 rows in set (0.00 sec)
+CREATE TABLE locations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    addresse VARCHAR(255) NOT NULL,
+    numero VARCHAR(255) NOT NULL,
+    prix DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (username) REFERENCES utilisateurs(username)
+);
 
 mysql> desc stock;
 +----------+-------------+------+-----+---------+----------------+
@@ -114,3 +112,5 @@ mysql> desc vhch; === Nb:Vehicule et chauffeurs
 8 rows in set (0.00 sec)
 
 MariaDB [ndongofall]> CREATE TABLE facturecompta ( id INT AUTO_INCREMENT PRIMARY KEY, date_facture DATE NOT NULL, total_ligne DECIMAL(10,2) NOT NULL,nom_chauffeur VARCHAR(100) NOT NULL, immatriculation VARCHAR(20) NOT NULL, produit VARCHAR(100) NOT NULL,  statut VARCHAR(50) NOT NULL DEFAULT 'en attente');
+INSERT INTO utilisateurs (username, password) 
+VALUES ('votre_nom_utilisateur', 'votre_mot_de_passe');

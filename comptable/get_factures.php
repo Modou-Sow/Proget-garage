@@ -87,7 +87,7 @@ if (isset($_POST['filtre_statut'])) {
 <meta charset="UTF-8">
 <html>
 <head>
-    <title>Factures en attente d'encaissement</title>
+    <title>Factures</title>
     <style>
         table {
             width: 100%;
@@ -163,7 +163,7 @@ if (isset($_POST['filtre_statut'])) {
     </style>
 </head>
 <body>
-    <h1>Factures en attente d'encaissement</h1>
+    <h1>FACTURES</h1>
    
     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <div class="filtre-container">
@@ -185,7 +185,7 @@ if (isset($_POST['filtre_statut'])) {
             <tr>
                 <th>Date</th>
                 <th>Montant</th>
-                <th>Chauffeur</th>
+                <th>Matricule</th>
                 <th>Panne</th>
                 <th>Statut</th>
                 <th>Actions</th>
@@ -198,8 +198,8 @@ if (isset($_POST['filtre_statut'])) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row["date_facture"] . "</td>";
-                    echo "<td>" . $row["total_ligne"] . " €</td>";
-                    echo "<td>" . $row["nom_chauffeur"] . "</td>";
+                    echo "<td>" . $row["total_ligne"] . " F</td>";
+                    echo "<td>" . $row["immatriculation"] . "</td>";
                     echo "<td>" . $row["panne"] . "</td>";
                     echo "<td>" . $row["statut"] . "</td>";
                     echo "<td>
