@@ -60,25 +60,26 @@ if (isset($_POST['annuler'])) {
 if (isset($_POST['filtre_statut'])) {
     $filtreStatut = $_POST['filtre_statut'];
 
-    if ($filtreStatut === "en attente") {
-        $sql = "SELECT * FROM facturecompta WHERE statut ='En attente' ORDER BY date_facture DESC";
-        $result = $conn->query($sql);
-    } elseif ($filtreStatut === "Encaissée") {
-        $sql = "SELECT * FROM facturecompta WHERE statut ='Encaissé' ORDER BY date_facture DESC";
-        $result = $conn->query($sql);
-    } elseif ($filtreStatut === "annulée") {
-        $sql = "SELECT * FROM facturecompta WHERE statut ='Annulée' ORDER BY date_facture DESC";
-        $result = $conn->query($sql);
-    } else {
-        // Si le filtreStatut est autre chose que "en attente", "Encaissée" ou "annulée", on affiche une erreur
-        echo "<p class='erreur'>Filtre invalide.</p>";
+    if ($filtreStatut !== "en attente") {
+        // Si le filtreStatut est "Encaissée", on filtre les factures commençant par "E"
+        if ($filtreStatut === "Encaissée") {
+            $sql = "SELECT * FROM facturecompta WHERE statut LIKE 'E%'";
+            $stmt = $conn->prepare($sql);
+        } elseif ($filtreStatut === "annulée") { // Condition pour "Annulée"
+            $sql = "SELECT * FROM facturecompta WHERE statut LIKE 'A%'";
+            $stmt = $conn->prepare($sql);
+        }else {
         $sql = "SELECT * FROM facturecompta ORDER BY date_facture DESC";
-        $result = $conn->query($sql);
+        $stmt = $conn->prepare($sql);
     }
+
+    $stmt->execute();
+    $result = $stmt->get_result();
 } else {
-    // Si aucun filtre n'est sélectionné, on affiche toutes les factures en attente
-    $sql = "SELECT * FROM facturecompta WHERE statut ='En attente' ORDER BY date_facture DESC";
+    // Requête SQL sans filtrage (par défaut)
+    $sql = "SELECT * FROM facturecompta WHERE statut ='En attente'";
     $result = $conn->query($sql);
+}
 }
 ?>
 
