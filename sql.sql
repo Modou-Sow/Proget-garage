@@ -33,6 +33,8 @@ mysql> desc factures;
 | immatriculation | varchar(22) | YES  |     | NULL    |                |
 | nom_chauffeur   | varchar(20) | YES  | MUL | NULL    |                |
 +-----------------+-------------+------+-----+---------+----------------+
+ALTER TABLE facturecompta
+ADD COLUMN  statut VARCHAR(50) NOT NULL DEFAULT 'en attente';
 
 
 mysql> desc factures_lignes;
@@ -110,3 +112,5 @@ mysql> desc vhch; === Nb:Vehicule et chauffeurs
 | marque_voiture  | varchar(30) | YES  |     | NULL    |                |
 +-----------------+-------------+------+-----+---------+----------------+
 8 rows in set (0.00 sec)
+
+MariaDB [ndongofall]> CREATE TABLE facturecompta ( id INT AUTO_INCREMENT PRIMARY KEY, date_facture DATE NOT NULL, total_ligne DECIMAL(10,2) NOT NULL,nom_chauffeur VARCHAR(100) NOT NULL, immatriculation VARCHAR(20) NOT NULL, produit VARCHAR(100) NOT NULL,  statut VARCHAR(50) NOT NULL DEFAULT 'en attente');

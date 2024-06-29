@@ -45,6 +45,16 @@ for ($i = 0; $i < count($lignes_facture); $i++) {
         exit;
     }
 }
+// partie pour le comptable!
+$sql_insert_header = "INSERT INTO facturecompta (date_facture, total_ligne, nom_chauffeur, immatriculation, panne )  VALUES ('$date_facture','$total_ligne',  '$nom_chauffeur', '$immatriculation', '$panne' )";
+if ($db->query($sql_insert_header) === TRUE) {
+    // Récupération de l'ID de la facture nouvellement insérée
+    $facture_id = $db->insert_id;
+} else {
+    // Affichage d'un message d'erreur en cas d'échec de l'insertion
+    echo "Erreur d'insertion de l'en-tête de facture dans la table facturecompta : " . $db->error;
+    exit;
+}
 
 // Insert invoice header into database
 $sql_insert_header = "INSERT INTO historique (date_facture,nom_chauffeur,immatriculation,panne,produit,total_ligne) VALUES ('$date_facture','$nom_chauffeur','$immatriculation','$panne','$produit','$total_ligne')";
@@ -54,6 +64,7 @@ $facture_id = $db->insert_id;
 echo "Erreur d'insertion de l'en-tête de facture : " . $db->error;
 exit;
  }
+
 
 
 // Redirect to success page or display confirmation message

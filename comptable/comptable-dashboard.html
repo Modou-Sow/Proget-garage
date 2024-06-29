@@ -23,8 +23,7 @@
             <div class="dashboard-box" id="encaissements-box">
                 <h2>Encaissements</h2>
                 <p>Consultez les factures en attente d'encaissement.</p>
-                <button class="view-btn" id="encaissements-btn">Voir les factures</button>
-            </div>
+                <a href="http://localhost/Proget-garage1/comptable/get_factures.php" class="view-btn" id="encaissements-btn">Voir les factures</a>            </div>
 
             <div class="dashboard-box" id="decaissements-box">
                 <h2>Décaissements</h2>
@@ -32,42 +31,8 @@
                 <button class="view-btn" id="decaissements-btn">Voir les décaissements</button>
             </div>
         </div>
+        
 
-        <div class="facture-container" id="facture-container" style="display: none;">
-            <h2>Factures en attente d'encaissement</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Montant</th>
-                        <th>Client</th>
-                        <th>Détails</th>
-                        <th>État</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2023-06-15</td>
-                        <td>1500 F</td>
-                        <td>modou</td>
-                        <td>Réparation moteur</td>
-                        <td>En attente</td>
-                        <td>
-                            <button class="encaisser-btn" id="encaisser-btn">Encaisser</button>
-                            <button class="annuler-btn" id="annuler-btn">Annuler</button>
-                        </td>
-                    </tr>
-                    <!-- Ajoutez d'autres lignes au besoin -->
-                </tbody>
-            </table>
-        </div>
-
-        <div class="facture-container" id="decaissements-container" style="display: none;">
-            <h2>Décaissements</h2>
-            <!-- Ajoutez le contenu pour les décaissements ici -->
-            <p>Contenu des décaissements...</p>
-        </div>
 
     </main>
 
@@ -75,6 +40,6 @@
         <p>&copy; Ndongo Fall. Tous droits réservés.</p>
     </footer>
 
-    <script src="script.js"></script>
+    
 </body>
 </html>
