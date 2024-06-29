@@ -9,6 +9,7 @@ $password = "";
 $dbname = "ndongofall";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
+$conn->set_charset("utf8mb4");
 
 // Vérifiez la connexion
 if ($conn->connect_error) {
@@ -16,7 +17,8 @@ if ($conn->connect_error) {
 }
 
 // Requête SQL pour récupérer les factures en attente d'encaissement
-$sql = "SELECT * FROM facturecompta ";
+$sql = "SELECT * FROM facturecompta ORDER BY date_facture DESC"; 
+
 $result = $conn->query($sql);
 
 if (isset($_POST['encaisser'])) {
@@ -54,6 +56,29 @@ if (isset($_POST['annuler'])) {
     } else {
         echo "<p class='erreur'>Facture $factureId déja annulée.</p>";
     }
+}
+if (isset($_POST['filtre_statut'])) {
+    $filtreStatut = $_POST['filtre_statut'];
+
+    if ($filtreStatut === "en attente") {
+        $sql = "SELECT * FROM facturecompta WHERE statut ='En attente' ORDER BY date_facture DESC";
+        $result = $conn->query($sql);
+    } elseif ($filtreStatut === "Encaissée") {
+        $sql = "SELECT * FROM facturecompta WHERE statut ='Encaissé' ORDER BY date_facture DESC";
+        $result = $conn->query($sql);
+    } elseif ($filtreStatut === "annulée") {
+        $sql = "SELECT * FROM facturecompta WHERE statut ='Annulée' ORDER BY date_facture DESC";
+        $result = $conn->query($sql);
+    } else {
+        // Si le filtreStatut est autre chose que "en attente", "Encaissée" ou "annulée", on affiche une erreur
+        echo "<p class='erreur'>Filtre invalide.</p>";
+        $sql = "SELECT * FROM facturecompta ORDER BY date_facture DESC";
+        $result = $conn->query($sql);
+    }
+} else {
+    // Si aucun filtre n'est sélectionné, on affiche toutes les factures en attente
+    $sql = "SELECT * FROM facturecompta WHERE statut ='En attente' ORDER BY date_facture DESC";
+    $result = $conn->query($sql);
 }
 ?>
 
@@ -103,10 +128,57 @@ if (isset($_POST['annuler'])) {
             border: 1px solid red; 
             margin-bottom: 10px; 
     }
+    .filtre-container {
+            display: flex; /* Aligner les éléments horizontalement */
+            justify-content: space-between; /* Espacement entre les éléments */
+            margin-bottom: 20px; /* Espacement inférieur */
+        }
+
+        .filtre-label {
+            margin-right: 10px; /* Espacement droit */
+        }
+
+        .filtre-select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .filtre-button {
+            background-color: #4CAF50; /* Couleur de fond verte */
+            color: white; /* Couleur du texte blanc */
+            padding: 10px 20px; /* Espacement interne */
+            border: none; /* Supprimer la bordure par défaut */
+            border-radius: 5px; /* Arrondis les coins */
+            cursor: pointer; /* Changer le curseur en pointeur */
+            font-size: 16px; /* Taille de la police */
+            font-weight: bold; /* Police en gras */
+        }
+
+        .filtre-button:hover {
+            background-color: #3e8e41; /* Couleur de fond plus foncée au survol */
+        }
     </style>
 </head>
 <body>
     <h1>Factures en attente d'encaissement</h1>
+   
+    <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <div class="filtre-container">
+            <div class="filtre-label">
+                <label for="filtre_statut"></label>
+            </div>
+            <div>
+                <select name="filtre_statut" id="filtre_statut" class="filtre-select">
+                    <option value="en attente">en attente</option>
+                    <option value="Encaissée">Encaissée</option>
+                    <option value="annulée">annulée</option>
+                </select>
+                <button type="submit" class="filtre-button">Filtrer</button>
+            </div>
+        </div>
+    </form>
     <table>
         <thead>
             <tr>
