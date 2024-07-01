@@ -8,7 +8,7 @@ const annulerBtn = document.getElementById('annuler-btn');
 // Affiche la section des factures
 encaissementsBtn.addEventListener('click', () => {
   factureContainer.style.display = 'block';
-  decaissementsContainer.style.display = 'none'; 
+  //decaissementsContainer.style.display = 'none'; 
 });
 
 // Affiche la section des décaissements 

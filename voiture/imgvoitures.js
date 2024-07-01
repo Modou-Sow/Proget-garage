@@ -1,5 +1,14 @@
 // add hovered class to selected list item
 let list = document.querySelectorAll(".navigation li");
+const descriptionBtn = document.getElementById('description');
+const texte = document.getElementById('texte');
+
+
+descriptionBtn.addEventListener('click', () => {
+  texte.style.display = 'block';
+  //decaissementsContainer.style.display = 'none'; 
+});
+
 
 function activeLink() {
   list.forEach((item) => {
